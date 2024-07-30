@@ -6,14 +6,6 @@
 var _ = {};
 
 
-
-
-
-
-
-
-
-
 /**
 * START OF OUR LIBRARY!
 * Implement each function below its instructions
@@ -30,12 +22,17 @@ var _ = {};
 */
 
 
-_.
-
-
-
-
-
+_.identity = function(value) {
+  if(value === typeof number) {
+    return value;
+  } else if(value === typeof String) {
+    return value;
+  } else if( value === Array.isArray()) {
+    return value;
+  } else {
+    return value;
+  }
+}
 
 
 /** _.typeOf
@@ -170,16 +167,16 @@ _.
 *   1) What if <function> returns something other than true or false?
 * Examples:
 *   _.filter([1,2,3,4,5], function(x){return x%2 === 0}) -> [2,4]
-
-* Extra Credit:
-*   use _.each in your implementation
-*/
-
 _.filter(['alex', 'francis', 'aaron'], function(x){ return x[0] === 'a'}); -> ['alex', 'francis']
 
 _.filter([ { name: 'Steph', course: 'Bootcamp' }, { name: 'Bethany', course: 'Precourse' }], function(student){
     return student.course === 'Bootcamp';
   }); // => [ { name: 'Steph', course: 'Bootcamp' } ]
+
+* Extra Credit:
+*   use _.each in your implementation
+*/
+
 
   //themes:
   //almost always iterating through an array
@@ -187,12 +184,13 @@ _.filter([ { name: 'Steph', course: 'Bootcamp' }, { name: 'Bethany', course: 'Pr
   //    //purpose of invoking for filter => to 'test' each item in the array (does it return true)
 
 
-  .filter = function(array, func) {
-    for(var i = 0; i < array.length; i++) {
-        if(i)
-    }
+  // .filter = function(array, func) {
+  //   output = [];
+  //   for(var i = 0; i < array.length; i++) {
+  //       if(func)
+  //   }
     
-  }
+  // }
 
 
 
@@ -249,9 +247,9 @@ _.map(['a', 'b', 'c'], function(string){ return string.toUpperCase()}); // ['A',
 _.map({ a: 1, b: 2 }, function(item){ return item * 10}); // [10, 20]
 */
 
-_.map = function(collection, func) {
+// _.map = function(collection, func) {
 
-}
+
 
 
 
