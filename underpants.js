@@ -1,6 +1,7 @@
 // This makes the arguments variable behave the way we want it to and a few
 // other things. For more info:
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode
+
 'use strict';
 
 var _ = {};
@@ -117,14 +118,12 @@ _.first = function(array, num) {
 _.last = function(array, num) {
   if(!Array.isArray(array) || num < 0) {
     return [];
-  } else if(num === undefined || typeof num !== 'number') {
+  } 
+  if(num === undefined || typeof num !== 'number') {
     return array[array.length-1];
-  } else if(num > array.length) {
-    return array
-  } else {
-    return array.slice(-num);
-  }
-}
+  }  
+  return array.slice(-num);
+};
 
 /** _.indexOf
 * Arguments:
@@ -141,6 +140,19 @@ _.last = function(array, num) {
 *   _.indexOf(["a","b","c"], "c") -> 2
 *   _.indexOf(["a","b","c"], "d") -> -1
 */
+
+_.indexOf = function(arr, value) {
+  if(!Array.isArray(arr)) {
+    return -1
+  }
+  for(var i = 0; i < arr.length; i++) {
+    if(arr[i] === value) {
+      return i;
+    }
+  }
+      return -1;
+    }
+
 
 
 /** _.contains
