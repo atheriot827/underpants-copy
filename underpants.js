@@ -55,6 +55,18 @@ _.identity = function(value) {
 * _.typeOf([1,2,3]) -> "array"
 */
 
+_.typeOf = function(value){
+  
+
+  switch(true) {
+    case value === null:
+      return "null";
+      case Array.isArray(value):
+        return "array";
+        default:
+          return typeof value;
+  }
+}
 
 /** _.first
 * Arguments:
