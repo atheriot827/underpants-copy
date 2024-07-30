@@ -6,6 +6,14 @@
 var _ = {};
 
 
+
+
+
+
+
+
+
+
 /**
 * START OF OUR LIBRARY!
 * Implement each function below its instructions
@@ -20,6 +28,14 @@ var _ = {};
 *   _.identity(5) === 5
 *   _.identity({a: "b"}) === {a: "b"}
 */
+
+
+_.
+
+
+
+
+
 
 
 /** _.typeOf
@@ -145,7 +161,7 @@ var _ = {};
 /** _.filter
 * Arguments:
 *   1) An array
-*   2) A function
+*   2) A function (call back)
 * Objectives:
 *   1) call <function> for each element in <array> passing the arguments:
 *      the element, it's index, <array>
@@ -154,9 +170,30 @@ var _ = {};
 *   1) What if <function> returns something other than true or false?
 * Examples:
 *   _.filter([1,2,3,4,5], function(x){return x%2 === 0}) -> [2,4]
+
 * Extra Credit:
 *   use _.each in your implementation
 */
+
+_.filter(['alex', 'francis', 'aaron'], function(x){ return x[0] === 'a'}); -> ['alex', 'francis']
+
+_.filter([ { name: 'Steph', course: 'Bootcamp' }, { name: 'Bethany', course: 'Precourse' }], function(student){
+    return student.course === 'Bootcamp';
+  }); // => [ { name: 'Steph', course: 'Bootcamp' } ]
+
+  //themes:
+  //almost always iterating through an array
+  //almost, always, they are invoking a function on each item of array (sometimes an Object)
+  //    //purpose of invoking for filter => to 'test' each item in the array (does it return true)
+
+
+  .filter = function(array, func) {
+    for(var i = 0; i < array.length; i++) {
+        if(i)
+    }
+    
+  }
+
 
 
 /** _.reject
@@ -207,7 +244,23 @@ var _ = {};
 *   3) return the new array
 * Examples:
 *   _.map([1,2,3,4], function(e){return e * 2}) -> [2,4,6,8]
+* _.map([1, 2, 3], function(num){ return num * 10 }); // [10, 20, 30]
+_.map(['a', 'b', 'c'], function(string){ return string.toUpperCase()}); // ['A', 'B', 'C'];
+_.map({ a: 1, b: 2 }, function(item){ return item * 10}); // [10, 20]
 */
+
+_.map = function(collection, func) {
+
+}
+
+
+
+
+
+
+
+
+
 
 
 /** _.pluck
