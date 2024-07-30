@@ -86,6 +86,15 @@ _.typeOf = function(value){
 *   _.first(["a", "b", "c"], 2) -> ["a", "b"]
 */
 
+_.first = function(array, num) {
+  if(!Array.isArray(array) || num < 0) {
+    return [];
+  } else if(num === undefined || typeof num !== 'number') {
+    return array[0];
+  } else {
+    return array.slice(0, num);
+  }
+}
 
 /** _.last
 * Arguments:
@@ -105,6 +114,17 @@ _.typeOf = function(value){
 *   _.last(["a", "b", "c"], 2) -> ["b", "c"]
 */
 
+_.last = function(array, num) {
+  if(!Array.isArray(array) || num < 0) {
+    return [];
+  } else if(num === undefined || typeof num !== 'number') {
+    return array[array.length-1];
+  } else if(num > array.length) {
+    return array
+  } else {
+    return array.slice(-num);
+  }
+}
 
 /** _.indexOf
 * Arguments:
