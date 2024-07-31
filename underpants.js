@@ -336,7 +336,32 @@ _.map({ a: 1, b: 2 }, function(item){ return item * 10}); // [10, 20]
 * Examples:
 *   _.every([2,4,6], function(e){return e % 2 === 0}) -> true
 *   _.every([1,2,3], function(e){return e % 2 === 0}) -> false
+  _.every([1, 2, 3]); // true (because every item is truthy)
+  _.every([1, undefined, 3]); // false (because one item is falsey)
+  _.every({ a: 1, b: 2 }); // true (because all of the values are truthy)
+  _.every({ a: null, b: 2}); // false (because of the values if falsey)
 */
+
+_.every = function(collection, func) {
+    if(Array.isArray(collection)) {
+      if(func === undefined) {
+        for(let i = 0; i < collection.length; i++)
+      } else {
+        for(let i = 0; i < length; i++) {
+          if(!func(collection[i], i, collection)) {
+            return false;
+          }
+        }
+      }
+    } else {
+
+    }
+    return true;
+}
+
+
+
+
 
 
 /** _.some
