@@ -170,6 +170,9 @@ _.indexOf = function(arr, value) {
 *   _.contains([1,"two", 3.14], "two") -> true
 */
 
+_.contains = function(arr, value) {
+  return value === undefined ? false : arr.includes(value);
+}
 
 /** _.each
 * Arguments:
@@ -342,22 +345,23 @@ _.map({ a: 1, b: 2 }, function(item){ return item * 10}); // [10, 20]
   _.every({ a: null, b: 2}); // false (because of the values if falsey)
 */
 
-_.every = function(collection, func) {
-    if(Array.isArray(collection)) {
-      if(func === undefined) {
-        for(let i = 0; i < collection.length; i++)
-      } else {
-        for(let i = 0; i < length; i++) {
-          if(!func(collection[i], i, collection)) {
-            return false;
-          }
-        }
-      }
-    } else {
+// _.every = function(collection, func) {
+//     if(Array.isArray(collection)) {
+//       if(func === undefined) {
+//         for(let i = 0; i < collection.length; i++) {
 
-    }
-    return true;
-}
+//       } else {
+//         for(let i = 0; i < length; i++) {
+//           if(!func(collection[i], i, collection)) {
+//             return false;
+//           }
+//         }
+//       }
+//     } else {
+
+//     }
+//     return true;
+// }
 
 
 
