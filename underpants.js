@@ -383,7 +383,6 @@ _.map = function(collection, func) {
 }
 
 
-
 /** _.pluck
 * Arguments:
 *   1) An array of objects
@@ -394,6 +393,33 @@ _.map = function(collection, func) {
 * Examples:
 *   _.pluck([{a: "one"}, {a: "two"}], "a") -> ["one", "two"]
 */
+
+// _.map = function(collection, func) {
+//   var newCollection = [];
+
+//   if(Array.isArray(collection)) {
+//     for(var i = 0; i < collection.length; i++) {
+//       newCollection.push(func(collection[i], i, collection))
+//     }
+//   }
+//   else if(collection !== null && typeof collection === 'object') {
+//     for(var key in collection) {
+//       newCollection.push(func(collection[key], key, collection))
+//     }
+//   }
+//   return newCollection;
+// }
+
+_.pluck = function (array, property) {
+
+  return _.map(array, function(item) {
+    return item[property];
+  });
+};
+
+
+
+
 
 
 /** _.every
