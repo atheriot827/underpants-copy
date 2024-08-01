@@ -303,6 +303,15 @@ _.filter([ { name: 'Steph', course: 'Bootcamp' }, { name: 'Bethany', course: 'Pr
 *   _.reject([1,2,3,4,5], function(e){return e%2 === 0}) -> [1,3,5]
 */
 
+_.reject = function (array, func) {
+  var falseElements = [];
+  _.each(array, function(element, index, array) {
+    if(!func(element, index, array)) {
+      falseElements.push(element)
+    }
+  });
+  return falseElements;
+}
 
 /** _.partition
 * Arguments:
