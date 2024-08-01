@@ -508,7 +508,7 @@ _.pluck = function (array, property) {
 */
 
 
-/** _.extend
+/** _.extend //Object.assign
 * Arguments:
 *   1) An Object
 *   2) An Object
@@ -523,6 +523,9 @@ _.pluck = function (array, property) {
 *   _.extend(data, {a:"two"}); -> data now equals {a:"two"}
 */
 
+_.extend = function(target, ...objects) { //object.assign
+  console.log(objects);
+}
 //////////////////////////////////////////////////////////////////////
 // DON'T REMOVE THIS CODE ////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
