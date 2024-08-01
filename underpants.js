@@ -366,17 +366,21 @@ _.map(['a', 'b', 'c'], function(string){ return string.toUpperCase()}); // ['A',
 _.map({ a: 1, b: 2 }, function(item){ return item * 10}); // [10, 20]
 */
 
-// _.map = function(collection, func) {
+_.map = function(collection, func) {
+  var newCollection = [];
 
-
-
-
-
-
-
-
-
-
+  if(Array.isArray(collection)) {
+    for(var i = 0; i < collection.length; i++) {
+      newCollection.push(func(collection[i], i, collection))
+    }
+  }
+  else if(collection !== null && typeof collection === 'object') {
+    for(var key in collection) {
+      newCollection.push(func(collection[key], key, collection))
+    }
+  }
+  return newCollection;
+}
 
 
 
