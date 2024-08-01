@@ -190,6 +190,20 @@ _.contains = function(arr, value) {
 *      -> should log "a" "b" "c" to the console
 */
 
+_.each = function(collection, func) {
+    if(Array.isArray(collection)) {
+      for(var i = 0; i < collection.length; i++) {
+      func(collection[i], i, collection);
+    }
+  } else {
+    if (collection !== null && typeof collection === 'object') {
+    for(var key in collection) {
+      func(collection[key], key, collection)
+      }
+    }
+  }
+}
+  
 
 /** _.unique
 * Arguments:
@@ -199,7 +213,31 @@ _.contains = function(arr, value) {
 *   2) Use _.indexOf() from above
 * Examples:
 *   _.unique([1,2,2,4,5,6,5,2]) -> [1,2,4,5,6]
+
+_.indexOf = function(arr, value) {
+  if(!Array.isArray(arr)) {
+    return -1
+  }
+  for(var i = 0; i < arr.length; i++) {
+    if(arr[i] === value) {
+      return i;
+    }
+  }
+      return -1;
+    }
+
 */
+
+_.unique = function(array) {
+  var duplicatesRemoved = [];
+  
+  for(var i = 0; i < array.length; i++) {
+    if(_.indexOf(duplicatesRemoved, array[i]) === -1) {
+      duplicatesRemoved.push(array[i])
+    }
+  }
+  return duplicatesRemoved;
+}
 
 
 /** _.filter
