@@ -253,29 +253,40 @@ _.unique = function(array) {
 * Examples:
 *   _.filter([1,2,3,4,5], function(x){return x%2 === 0}) -> [2,4]
 _.filter(['alex', 'francis', 'aaron'], function(x){ return x[0] === 'a'}); -> ['alex', 'francis']
-
 _.filter([ { name: 'Steph', course: 'Bootcamp' }, { name: 'Bethany', course: 'Precourse' }], function(student){
     return student.course === 'Bootcamp';
   }); // => [ { name: 'Steph', course: 'Bootcamp' } ]
-
 * Extra Credit:
 *   use _.each in your implementation
 */
-
-
   //themes:
   //almost always iterating through an array
   //almost, always, they are invoking a function on each item of array (sometimes an Object)
   //    //purpose of invoking for filter => to 'test' each item in the array (does it return true)
 
+//   _.each = function(collection, func) {
+//     if(Array.isArray(collection)) {
+//       for(var i = 0; i < collection.length; i++) {
+//       func(collection[i], i, collection);
+//     }
+//   } else {
+//     if (collection !== null && typeof collection === 'object') {
+//     for(var key in collection) {
+//       func(collection[key], key, collection)
+//       }
+//     }
+//   }
+// }
 
-  // .filter = function(array, func) {
-  //   output = [];
-  //   for(var i = 0; i < array.length; i++) {
-  //       if(func)
-  //   }
-    
-  // }
+ _.filter = function(array, func) {
+    var output = [];
+    _.each(array, function(element, index, array) {
+      if(func(element, index, array)) {
+        output.push(element);
+      }
+    });
+    return output;
+  }
 
 
 
