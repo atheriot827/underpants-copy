@@ -285,7 +285,7 @@ _.filter([ { name: 'Steph', course: 'Bootcamp' }, { name: 'Bethany', course: 'Pr
         output.push(element);
       }
     });
-    return output;
+    return output; 
   }
 
 
