@@ -418,10 +418,6 @@ _.pluck = function (array, property) {
 };
 
 
-
-
-
-
 /** _.every
 * Arguments:
 *   1) A collection
