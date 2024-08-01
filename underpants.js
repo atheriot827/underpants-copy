@@ -332,6 +332,25 @@ _.reject = function (array, func) {
 }
 */
 
+_.partition = function(array, func) {
+  var truthyArr = [];
+  var falseyArr = [];
+
+  _.each(array, function(element, index, array) {
+    if(func (element, index, array)) {
+      truthyArr.push(element)
+    } else {
+      falseyArr.push(element);
+    }
+  });
+  return [truthyArr, falseyArr];
+}
+
+
+
+
+
+
 
 /** _.map
 * Arguments:
