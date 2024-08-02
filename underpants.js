@@ -561,10 +561,10 @@ _.reduce = function (array, func, seed) {
 *   _.extend(data, {b:"two"}); -> data now equals {a:"one",b:"two"}
 *   _.extend(data, {a:"two"}); -> data now equals {a:"two"}
 */
+                ////ARROW FUNCTION////
+_.extend = (target, ...objects) => { return Object.assign(target, ...objects) };
 
-_.extend = function(target, ...objects) { //object.assign
-  console.log(objects);
-}
+
 //////////////////////////////////////////////////////////////////////
 // DON'T REMOVE THIS CODE ////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
