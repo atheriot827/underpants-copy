@@ -509,15 +509,6 @@ _.some = function (collection, func) {
 };
 
 
-
-
-
-
-
-
-
-
-
 /** _.reduce
 * Arguments:
 *   1) An array
@@ -537,6 +528,24 @@ _.some = function (collection, func) {
 *   _.reduce([1,2,3], function(previousSum, currentValue, currentIndex){ return previousSum + currentValue }, 0) -> 6
 */
 
+
+_.reduce = function (array, func, seed) {
+  var previousResult;
+  var startIndex;
+
+  if(seed !== undefined) {
+    previousResult = seed;
+    startIndex = 0;
+  } else {
+    previousResult = array[0];
+    startIndex = 1;
+  }
+
+  for(var i = startIndex; i < array.length; i++) {
+    previousResult = func(previousResult, array[i], i, array);
+  }
+  return previousResult;
+};
 
 /** _.extend //Object.assign
 * Arguments:
