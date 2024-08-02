@@ -443,27 +443,26 @@ _.pluck = function (array, property) {
   _.every({ a: null, b: 2}); // false (because of the values if falsey)
 */
 
-// _.every = function(collection, func) {
-//     if(Array.isArray(collection)) {
-//       if(func === undefined) {
-//         for(let i = 0; i < collection.length; i++) {
-
-//       } else {
-//         for(let i = 0; i < length; i++) {
-//           if(!func(collection[i], i, collection)) {
-//             return false;
-//           }
-//         }
-//       }
-//     } else {
-
-//     }
-//     return true;
-// }
-
-
-
-
+_.every = function(collection, func) {
+    if(Array.isArray(collection)) {
+      for(var i = 0; i < collection.length; i++) {
+        var result = func ? func(collection[i], i, collection) : collection[i];
+        if(!result) {
+          return false;
+        }
+      }
+    } else if( collection !== null && typeof collection === 'object') {
+      for(var key in collection) {
+        if(collection.hasOwnProperty(key)) {
+          var objResult = func ? func(collection[key], key, collection) : collection[key];
+          if (!objResult) {
+            return false;
+          }
+        }
+      }
+    }
+    return true;
+  };
 
 
 /** _.some
@@ -486,6 +485,18 @@ _.pluck = function (array, property) {
 *   _.some([1,3,5], function(e){return e % 2 === 0}) -> false
 *   _.some([1,2,3], function(e){return e % 2 === 0}) -> true
 */
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /** _.reduce
