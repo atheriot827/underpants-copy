@@ -487,7 +487,26 @@ _.every = function(collection, func) {
 */
 
 
-
+_.some = function (collection, func) {
+  if(Array.isArray(collection)) {
+    for(var i = 0; i < collection.length; i++) {
+      var arrResult = func ? func(collection[i], i, collection) : collection[i];
+      if (arrResult) {
+        return true;
+      }
+    }
+  } else if (collection !== null && typeof collection === 'object') {
+    for(var key in collection) {
+      if(collection.hasOwnProperty(key)) {
+        var objResult = func ? func(collection[key], key, collection) : collection[key];
+        if(objResult) {
+          return true;
+        }
+      }
+    }
+  }
+  return false;
+};
 
 
 
